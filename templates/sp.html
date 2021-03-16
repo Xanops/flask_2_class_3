@@ -1,0 +1,21 @@
+{% extends "index.html" %}
+
+{% block sp %}
+    {% if arg == 'ol' %}
+        <h2>Список профессий</h2>
+        <ol>
+            {% for elem in sp %}
+            <li>{{ elem }}</li>
+            {% endfor %}
+        </ol>
+    {% elif arg == 'ul' %}
+        <h2>Список профессий</h2>
+        {% for elem in sp %}
+            <ul><li>{{ elem }}</li></ul>
+        {% endfor %}
+    {% else %}
+        <div class="alert alert-dark" role="alert">
+            Ошибка! Не указан правильный аргумент в адресе.
+        </div>
+    {% endif %}
+{% endblock %}

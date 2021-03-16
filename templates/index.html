@@ -5,28 +5,13 @@
         <link rel="stylesheet" href="../static/css/style.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
               integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+        <title>{{ title }}</title>
     </head>
     <body>
-        {% if arg == 'ol' %}
-            <h1>Миссия Колонизация Марса</h1>
-            <h4>И на Марсе будут яблони цвести!</h4>
-            <h2>Список профессий</h2>
-            <ol>
-            {% for elem in sp %}
-                <li>{{ elem }}</li>
-            {% endfor %}
-            </ol>
-        {% elif arg == 'ul' %}
-            <h1>Миссия Колонизация Марса</h1>
-            <h4>И на Марсе будут яблони цвести!</h4>
-            <h2>Список профессий</h2>
-            {% for elem in sp %}
-                <ul><li>{{ elem }}</li></ul>
-            {% endfor %}
-        {% else %}
-            <div class="alert alert-dark" role="alert">
-                Ошибка! Не указан правильный аргумент в адресе.
-            </div>
-        {% endif %}
+        <h1>Миссия Колонизация Марса</h1>
+        <h4>И на Марсе будут яблони цвести!</h4>
+        <main role="main" class="container">
+            {% block sp %}{% endblock %}
+        </main>
     </body>
 </html>
