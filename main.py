@@ -7,7 +7,7 @@ app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
 @app.route('/<title>')
 @app.route('/index/<title>')
 def index(title):
-    return render_template('index.html', title=title)
+    return render_template('base.html', title=title)
 
 
 @app.route('/list_prof/<list>')
